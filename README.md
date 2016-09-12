@@ -32,6 +32,7 @@ Copy and paste at will
     xlabel                          # label for y axis
     gap                             # all a gap between the bars (use a float, default = 0. i.e. no gap)
     endGaps                         # allow gaps at end of bar chart (only used if gaps != 0.) True or False (default = False)
+    labels					    # ledgend labels for cols - must be same length as cols
 
 ## Example usage 1
 
