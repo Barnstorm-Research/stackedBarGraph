@@ -141,7 +141,8 @@ class StackedBarGrapher:
                        ylabel='',                          # label for x axis
                        xlabel='',                          # label for y axis
                        gap=0.,                             # gap between bars
-                       endGaps=False                       # allow gaps at end of bar chart (only used if gaps != 0.)
+                       endGaps=False ,                     # allow gaps at end of bar chart (only used if gaps != 0.)
+                       labels=None                         # Labels for the colors (should be the same length of cols) 
                        ):
 
 #------------------------------------------------------------------------------
@@ -230,7 +231,8 @@ class StackedBarGrapher:
                edgecolor=edgeCols[0],
                width=gapd_widths,
                linewidth=0.5,
-               align='center'
+               align='center',
+               label=labels[0]
                )
 
         for i in np.arange(1,levels):
@@ -241,7 +243,8 @@ class StackedBarGrapher:
                    edgecolor=edgeCols[i],
                    width=gapd_widths,
                    linewidth=0.5,
-                   align='center'
+                   align='center',
+                   label=labels[i]
                    )
 
         # borders
@@ -277,6 +280,9 @@ class StackedBarGrapher:
             plt.xlabel(xlabel)
         if ylabel != '':
             plt.ylabel(ylabel)
+            
+        plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,numpoints=1) 
+
 
 
 ###############################################################################
